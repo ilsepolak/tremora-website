@@ -24,6 +24,14 @@
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Outfit', system-ui, sans-serif;
+
+  /* Responsive breakpoints (voor reference in media queries) */
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 992px;
+  --bp-xl: 1200px;
+  /* Touch target minimum (WCAG / Apple HIG) */
+  --touch-min: 44px;
 }
 
 /* ===== RESET & BASIS ===== */
@@ -56,16 +64,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw + 1.5rem, 4rem);
   font-weight: 300;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw + 1rem, 2.5rem);
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 2vw + 0.8rem, 1.8rem);
 }
 
 p {
@@ -162,34 +170,61 @@ a:hover {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.hamburger:hover {
+  background: var(--blush-whisper);
 }
 
 .hamburger span {
-  width: 25px;
+  width: 24px;
   height: 2px;
   background: var(--text-dark);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* ===== BUTTONS ===== */
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===== BUTTONS (CTA) ===== */
 .btn {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: clamp(0.875rem, 2vw, 0.9rem);
   letter-spacing: 0.08em;
-  padding: 1rem 2.5rem;
+  padding: 0.875rem 1.75rem;
+  min-height: var(--touch-min);
+  min-width: var(--touch-min);
   border-radius: 100px;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .btn-primary {
@@ -215,7 +250,7 @@ a:hover {
 
 /* ===== SECTIONS ===== */
 .section {
-  padding: 5rem 2rem;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -267,9 +302,15 @@ a:hover {
 
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.cta-buttons .btn {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 /* ===== TWO COLUMN LAYOUT ===== */
@@ -359,12 +400,12 @@ a:hover {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  min-height: 80vh;
+  min-height: min(80vh, 600px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
   background: linear-gradient(170deg, var(--blush-whisper) 0%, var(--blush-light) 40%, var(--blush-soft) 100%);
   position: relative;
   overflow: hidden;
@@ -394,7 +435,7 @@ a:hover {
 }
 
 .hero h1 {
-  font-size: 5rem;
+  font-size: clamp(2.25rem, 8vw + 1rem, 5rem);
   font-weight: 300;
   margin-bottom: 0.5rem;
   letter-spacing: 0.05em;
@@ -403,7 +444,7 @@ a:hover {
 .hero-subtitle {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--taupe-dark);
@@ -414,27 +455,33 @@ a:hover {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   color: var(--blush-deep);
   margin: 2rem 0 3rem;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.hero-buttons .btn {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 /* ===== PAGE HEADER ===== */
 .page-header {
   background: var(--blush-whisper);
-  padding: 4rem 2rem;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
   text-align: center;
 }
 
 .page-header h1 {
-  font-size: 3rem;
+  font-size: clamp(1.75rem, 5vw + 1rem, 3rem);
   margin-bottom: 0.5rem;
 }
 
@@ -626,10 +673,125 @@ a:hover {
   color: var(--blush);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE — Marktstandaarden (mobile-first breakpoints) ===== */
+
+/* Extra small (phones portret) — tot 575px */
+@media (max-width: 575px) {
+  .header {
+    padding: 1rem 1rem;
+  }
+
+  .header-container {
+    gap: 0.5rem;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 52px;
+  }
+
+  .cta-block,
+  .hero-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .cta-buttons,
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .cta-buttons .btn,
+  .hero-buttons .btn {
+    width: 100%;
+    min-width: 0;
+    padding: 1rem 1.5rem;
+    white-space: normal;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .cta-block {
+    padding: 2.5rem 1rem;
+    margin: 2.5rem 0;
+  }
+
+  .offer-card {
+    padding: 1.5rem;
+  }
+
+  .offer-card .btn {
+    width: 100%;
+    display: flex;
+    margin-top: 1.5rem;
+  }
+
+  .faq-question {
+    padding: 1.25rem 1rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-answer-content {
+    padding: 0 1rem 1.25rem;
+  }
+
+  .step-item {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .step-content {
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid var(--blush-light);
+    padding-top: 0.75rem;
+    margin-left: 0;
+  }
+
+  .step-number {
+    font-size: 2.25rem;
+  }
+
+  .footer {
+    padding: 2.5rem 1rem 1.5rem;
+  }
+
+  .footer-brand {
+    font-size: 1.5rem;
+  }
+
+  .footer-logo-icon {
+    width: 48px;
+    height: 62px;
+  }
+}
+
+/* Small (phones landscape / grote phones) — 576px–767px */
+@media (min-width: 576px) and (max-width: 767px) {
+  .cta-buttons .btn,
+  .hero-buttons .btn {
+    min-width: 160px;
+  }
+}
+
+/* Medium (tablets) — tot 768px: navigatie en layout */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .nav-links {
@@ -640,18 +802,43 @@ a:hover {
     right: 0;
     background: var(--warm-white);
     flex-direction: column;
-    padding: 2rem;
+    padding: 1.5rem 1rem;
     box-shadow: 0 4px 20px rgba(61, 46, 39, 0.1);
-    gap: 1rem;
+    gap: 0;
+    margin-top: 0.5rem;
+    border-radius: 0 0 12px 12px;
   }
 
   .nav-links.active {
     display: flex;
   }
 
+  .nav-links li {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    min-height: var(--touch-min);
+  }
+
   .nav-cta {
     margin-left: 0;
     margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+    width: 100%;
+  }
+
+  .nav-cta .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .two-column {
@@ -659,28 +846,45 @@ a:hover {
     gap: 2rem;
   }
 
+  .two-column > div:first-child {
+    order: 2;
+  }
+
+  .two-column > div:last-child {
+    order: 1;
+  }
+
+  .two-column img {
+    max-height: 280px;
+    object-fit: cover;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
   }
 
   .card-grid {
     grid-template-columns: 1fr;
   }
 
-  h1 {
-    font-size: 2.5rem;
+  /* Aanbod-pagina: offer cards altijd 1 kolom op tablet/mobiel */
+  .card-grid[style*="minmax(400px"] {
+    grid-template-columns: 1fr !important;
   }
+}
 
-  h2 {
-    font-size: 2rem;
+/* Tablet tot 991px */
+@media (max-width: 991px) {
+  .hero-logo {
+    width: 90px;
+    height: 117px;
   }
+}
 
-  .page-header h1 {
-    font-size: 2.5rem;
+/* Large (desktop): nav-cta naast links */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
   }
 }

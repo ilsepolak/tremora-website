@@ -2,15 +2,31 @@
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
-  
+  const header = document.querySelector('.header');
+
   if (hamburger && navLinks) {
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-controls', 'nav-links');
+
     hamburger.addEventListener('click', function() {
-      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.toggle('active');
+      hamburger.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Sluit menu bij klik op een link (mobile UX)
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
     });
   }
 
   // Header shadow on scroll
-  const header = document.querySelector('.header');
   if (header) {
     window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
