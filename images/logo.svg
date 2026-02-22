@@ -1,0 +1,16 @@
+<svg viewBox="0 0 110 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Head circle — taupe stroke -->
+  <circle cx="55" cy="18" r="13" fill="none" stroke="#8C7B6B" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Left side: from point below head, curves out, then gently inward at bottom -->
+  <path d="M55 34
+           C52 46, 28 58, 28 80
+           C28 94, 36 103, 44 105
+           C47 106, 49 104, 51 100" 
+        stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right side: mirror, also stops just before center leaving a gap -->
+  <path d="M55 34
+           C58 46, 82 58, 82 80
+           C82 94, 74 103, 66 105
+           C63 106, 61 104, 59 100" 
+        stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tremora — Huisstijlgids 2.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Primary — Blush family */
+    --blush: #D09080;
+    --blush-deep: #BE7E68;
+    --blush-soft: #E4C4B8;
+    --blush-light: #F0DED6;
+    --blush-whisper: #F8F0EC;
+
+    /* Secondary — Taupe family */
+    --taupe: #B8A99A;
+    --taupe-dark: #8C7B6B;
+    --taupe-deep: #6B5D55;
+
+    /* Neutrals */
+    --cream: #F7F3EF;
+    --warm-white: #FDFBF9;
+    --text-dark: #3D2E27;
+    --text-medium: #6B5D55;
+    --text-light: #9B8E86;
+    --border-light: #E8E0D8;
+
+    /* Brand brown (logo background reference) */
+    --brand-dark: #3D3029;
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(170deg, var(--blush-whisper) 0%, var(--blush-light) 40%, var(--blush-soft) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 2rem;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    right: -15%;
+    width: 55%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(212, 171, 155, 0.25) 0%, transparent 65%);
+    border-radius: 50%;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 45%;
+    height: 55%;
+    background: radial-gradient(ellipse, rgba(184, 169, 154, 0.15) 0%, transparent 65%);
+    border-radius: 50%;
+  }
+
+  .badge {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.5rem;
+    border-radius: 100px;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-area {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+  }
+
+  .logo-icon {
+    width: 110px;
+    height: 140px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .logo-text {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 5rem;
+    letter-spacing: 0.05em;
+    color: var(--text-dark);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .logo-subtitle {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+  }
+
+  .header-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--blush-deep);
+    opacity: 0.4;
+    margin: 3rem auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: var(--blush-deep);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 500px;
+  }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-number {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: var(--blush);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: var(--text-dark);
+    letter-spacing: 0.02em;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    margin-top: 0.75rem;
+    max-width: 600px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 0 2rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ===== COLORS ===== */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .color-group-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .color-group-label:first-child {
+    margin-top: 0;
+  }
+
+  .color-card {
+    border-radius: 14px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 16px rgba(61, 46, 39, 0.05);
+  }
+
+  .color-swatch {
+    height: 110px;
+    position: relative;
+  }
+
+  .color-swatch.bordered {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .color-info {
+    padding: 1.1rem;
+  }
+
+  .color-name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 0.15rem;
+  }
+
+  .color-hex {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  .color-role {
+    font-size: 0.75rem;
+    color: var(--taupe-dark);
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+
+  .color-primary-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.7);
+    color: var(--taupe-dark);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  .type-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .type-showcase { grid-template-columns: 1fr; }
+  }
+
+  .type-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 16px rgba(61, 46, 39, 0.05);
+  }
+
+  .type-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .type-display-sample {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .type-body-sample {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .type-meta {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-light);
+    padding-top: 1rem;
+  }
+
+  .type-example {
+    background: var(--blush-whisper);
+    border-radius: 16px;
+    padding: 3rem;
+    border-left: 3px solid var(--blush);
+  }
+
+  .type-example h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+
+  .type-example p {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.8;
+    max-width: 650px;
+  }
+
+  /* ===== LOGO VARIANTS ===== */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .logo-variant {
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    position: relative;
+  }
+
+  .logo-variant-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .logo-variant.light {
+    background: white;
+    box-shadow: 0 2px 20px rgba(61, 46, 39, 0.06);
+  }
+
+  .logo-variant.blush-bg {
+    background: var(--blush-light);
+  }
+
+  .logo-variant.dark {
+    background: var(--brand-dark);
+  }
+
+  .logo-variant .variant-name {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 2.4rem;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+  }
+
+  .logo-variant .variant-sub {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 0.35rem;
+  }
+
+  .logo-variant.light .variant-name,
+  .logo-variant.blush-bg .variant-name { color: var(--text-dark); }
+  .logo-variant.light .variant-sub { color: var(--blush-deep); }
+  .logo-variant.blush-bg .variant-sub { color: var(--taupe-dark); }
+  .logo-variant.light .logo-variant-label,
+  .logo-variant.blush-bg .logo-variant-label { color: var(--text-light); }
+
+  .logo-variant.dark .variant-name { color: var(--cream); }
+  .logo-variant.dark .variant-sub { color: var(--blush-soft); }
+  .logo-variant.dark .logo-variant-label { color: var(--taupe); }
+
+  /* ===== BEELDMERK ===== */
+  .icon-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .icon-display {
+    flex: 0 0 auto;
+    border-radius: 24px;
+    width: 200px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-display.on-dark {
+    background: var(--brand-dark);
+  }
+
+  .icon-display.on-light {
+    background: var(--blush-whisper);
+  }
+
+  .icon-displays-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .icon-explanation {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .icon-explanation h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .icon-explanation p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+  }
+
+  .icon-detail {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background: var(--blush-whisper);
+    border-radius: 12px;
+  }
+
+  .icon-detail p {
+    font-size: 0.85rem;
+    color: var(--taupe-deep);
+    margin-bottom: 0;
+  }
+
+  /* ===== TONE OF VOICE ===== */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .voice-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 2px 16px rgba(61, 46, 39, 0.05);
+    border-top: 3px solid var(--blush);
+  }
+
+  .voice-card h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .voice-card p {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+  }
+
+  /* ===== BUTTONS ===== */
+  .button-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .button-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .button-row-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    width: 100%;
+    margin-bottom: -0.5rem;
+  }
+
+  .btn {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: var(--blush);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--blush-deep);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--taupe-dark);
+    border: 1.5px solid var(--taupe);
+  }
+
+  .btn-secondary:hover {
+    background: var(--cream);
+  }
+
+  .btn-soft {
+    background: var(--blush-light);
+    color: var(--taupe-deep);
+  }
+
+  .btn-soft:hover {
+    background: var(--blush-soft);
+  }
+
+  /* ===== IMAGERY ===== */
+  .imagery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .imagery-grid { grid-template-columns: 1fr; }
+  }
+
+  .imagery-card {
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imagery-card.do {
+    background: var(--blush-whisper);
+    border: 1.5px solid rgba(212, 171, 155, 0.25);
+  }
+
+  .imagery-card.dont {
+    background: rgba(107, 83, 74, 0.03);
+    border: 1.5px dashed rgba(107, 83, 74, 0.15);
+  }
+
+  .imagery-card .check {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .imagery-card h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .imagery-card p {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+  }
+
+  /* ===== HIERARCHY DEMO ===== */
+  .hierarchy-demo {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 2px 16px rgba(61, 46, 39, 0.05);
+    margin-top: 2rem;
+  }
+
+  .hierarchy-demo .demo-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 0.5rem;
+  }
+
+  .hierarchy-demo .demo-primary {
+    width: 100%;
+    height: 8px;
+    background: var(--blush);
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hierarchy-demo .demo-secondary {
+    width: 100%;
+    height: 8px;
+    background: var(--taupe);
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hierarchy-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hierarchy-bar-row span {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    min-width: 80px;
+  }
+
+  .hierarchy-bar {
+    flex: 1;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: linear-gradient(160deg, var(--blush-whisper) 0%, var(--blush-light) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .footer p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--taupe-dark);
+  }
+
+  .footer .small {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .badge { animation: fadeInUp 1s ease-out 0s both; }
+  .logo-area { animation: fadeInUp 1s ease-out 0.2s both; }
+  .header-divider { animation: fadeInUp 1s ease-out 0.5s both; }
+  .header-tagline { animation: fadeInUp 1s ease-out 0.7s both; }
+</style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <section class="header">
+    <div class="badge">Huisstijlgids 2.0</div>
+    <div class="logo-area">
+      <!-- Logo: circle head (taupe) + upside-down heart body (blush) 
+           Less bulbous, small gap at bottom where the two sides almost meet -->
+      <svg class="logo-icon" viewBox="0 0 110 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Head circle — taupe stroke -->
+        <circle cx="55" cy="18" r="13" fill="none" stroke="#8C7B6B" stroke-width="2.8" stroke-linecap="round"/>
+        <!-- Left side: from point below head, curves out, then gently inward at bottom, stops just before center -->
+        <path d="M55 34
+                 C52 46, 28 58, 28 80
+                 C28 94, 36 103, 44 105
+                 C47 106, 49 104, 51 100" 
+              stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Right side: mirror, also stops just before center leaving a gap -->
+        <path d="M55 34
+                 C58 46, 82 58, 82 80
+                 C82 94, 74 103, 66 105
+                 C63 106, 61 104, 59 100" 
+              stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="logo-text">Tremora</div>
+      <div class="logo-subtitle">Praktijk voor TRE & Coaching</div>
+    </div>
+    <div class="header-divider"></div>
+    <div class="header-tagline">Je lichaam kent de weg<br>van spanning naar ontspanning</div>
+  </section>
+
+  <!-- ===== 01. KLEURENPALET ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <div class="section-title">Kleurenpalet</div>
+      <p class="section-desc">Blush als warme hoofdkleur, taupe als rustgevend tegenwicht. Samen creëren ze een palet dat uitnodigt, vertrouwen wekt en rust uitstraalt.</p>
+    </div>
+
+    <div class="color-group-label">Primair — Blush</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #D09080;">
+          <span class="color-primary-badge">Hoofdkleur</span>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Blush</div>
+          <div class="color-hex">#D09080</div>
+          <div class="color-role">Knoppen, accenten, lijnen</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #BE7E68;"></div>
+        <div class="color-info">
+          <div class="color-name">Blush Deep</div>
+          <div class="color-hex">#BE7E68</div>
+          <div class="color-role">Hover-states, nadruk</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #E4C4B8;"></div>
+        <div class="color-info">
+          <div class="color-name">Blush Soft</div>
+          <div class="color-hex">#E4C4B8</div>
+          <div class="color-role">Achtergrondvlakken</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #F0DED6;"></div>
+        <div class="color-info">
+          <div class="color-name">Blush Light</div>
+          <div class="color-hex">#F0DED6</div>
+          <div class="color-role">Secties & highlights</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch bordered" style="background: #F8F0EC;"></div>
+        <div class="color-info">
+          <div class="color-name">Blush Whisper</div>
+          <div class="color-hex">#F8F0EC</div>
+          <div class="color-role">Subtiele achtergrond</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-group-label">Secondair — Taupe</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #B8A99A;"></div>
+        <div class="color-info">
+          <div class="color-name">Taupe</div>
+          <div class="color-hex">#B8A99A</div>
+          <div class="color-role">Secondaire accenten</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #8C7B6B;"></div>
+        <div class="color-info">
+          <div class="color-name">Taupe Dark</div>
+          <div class="color-hex">#8C7B6B</div>
+          <div class="color-role">Subtekst, iconen</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #6B5D55;"></div>
+        <div class="color-info">
+          <div class="color-name">Taupe Deep</div>
+          <div class="color-hex">#6B5D55</div>
+          <div class="color-role">Body tekst</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-group-label">Basis</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch bordered" style="background: #F7F3EF;"></div>
+        <div class="color-info">
+          <div class="color-name">Crème</div>
+          <div class="color-hex">#F7F3EF</div>
+          <div class="color-role">Pagina-achtergrond</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #3D2E27;"></div>
+        <div class="color-info">
+          <div class="color-name">Warm Donker</div>
+          <div class="color-hex">#3D2E27</div>
+          <div class="color-role">Koppen & titels</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color hierarchy demo -->
+    <div class="hierarchy-demo">
+      <div class="demo-label">Kleurverhoudingen</div>
+      <div class="hierarchy-bar-row">
+        <span>Blush</span>
+        <div class="hierarchy-bar" style="background: var(--blush); flex: 3;"></div>
+      </div>
+      <div class="hierarchy-bar-row">
+        <span>Taupe</span>
+        <div class="hierarchy-bar" style="background: var(--taupe); flex: 1.5;"></div>
+      </div>
+      <div class="hierarchy-bar-row">
+        <span>Neutraal</span>
+        <div class="hierarchy-bar" style="background: var(--cream); flex: 4; border: 1px solid var(--border-light);"></div>
+      </div>
+      <div class="hierarchy-bar-row">
+        <span>Donker</span>
+        <div class="hierarchy-bar" style="background: var(--text-dark); flex: 1;"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 02. TYPOGRAFIE ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div class="section-title">Typografie</div>
+      <p class="section-desc">Een sierlijk serif voor warmte en karakter, een clean sans-serif voor leesbaarheid en helderheid.</p>
+    </div>
+    <div class="type-showcase">
+      <div class="type-card">
+        <div class="type-label">Display / Koppen</div>
+        <div class="type-display-sample">Cormorant<br>Garamond</div>
+        <div class="type-meta">Light 300 · Regular 400 · Medium 500<br>Logo, koppen, quotes, titels</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Body / Lopende tekst</div>
+        <div class="type-body-sample">Outfit</div>
+        <div class="type-meta">Light 300 · Regular 400 · Medium 500<br>Lopende tekst, knoppen, navigatie, labels</div>
+      </div>
+    </div>
+    <div class="type-example">
+      <h3>Leer je lichaam weer vertrouwen</h3>
+      <p>TRE (Tension & Trauma Releasing Exercises) helpt je lichaam om opgeslagen spanning los te laten. Door middel van eenvoudige oefeningen activeer je het natuurlijke trilmechanisme van je lichaam — een proces dat zorgt voor diepe ontspanning en herstel. Het mooie? Als je het eenmaal geleerd hebt, kun je het de rest van je leven zelfstandig toepassen.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 03. BEELDMERK ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <div class="section-title">Beeldmerk</div>
+      <p class="section-desc">Een gestileerde menselijke figuur waarvan het lichaam samenvloeit in een hartvorm — eenvoud, warmte en verbinding.</p>
+    </div>
+    <div class="icon-section">
+      <div class="icon-displays-row">
+        <div class="icon-display on-dark">
+          <svg width="80" height="115" viewBox="0 0 110 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="55" cy="18" r="13" fill="none" stroke="#B8A99A" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M55 34 C52 46, 28 58, 28 80 C28 94, 36 103, 44 105 C47 106, 49 104, 51 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M55 34 C58 46, 82 58, 82 80 C82 94, 74 103, 66 105 C63 106, 61 104, 59 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="icon-display on-light">
+          <svg width="80" height="115" viewBox="0 0 110 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="55" cy="18" r="13" fill="none" stroke="#8C7B6B" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M55 34 C52 46, 28 58, 28 80 C28 94, 36 103, 44 105 C47 106, 49 104, 51 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M55 34 C58 46, 82 58, 82 80 C82 94, 74 103, 66 105 C63 106, 61 104, 59 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="icon-explanation">
+        <h3>Concept & betekenis</h3>
+        <p>Het beeldmerk is bewust minimalistisch: een cirkel als hoofd en twee vloeiende lijnen die het lichaam vormen en samenkomen in een hartvorm onderaan.</p>
+        <p>De <strong>hartvorm</strong> symboliseert zorg, verbinding en de warmte waarmee Els haar cliënten begeleidt. De <strong>open, vloeiende lijnen</strong> verbeelden het loslaten — de kern van TRE.</p>
+        <p>Het hoofd is in <strong>taupe</strong> (rust, bewustzijn), het lichaam in <strong>blush</strong> (warmte, gevoel).</p>
+        <div class="icon-detail">
+          <p><em>Opmerking: dit SVG is een conceptrichting die de gewenste vorm en stijl vastlegt. Voor het definitieve logo adviseren we een grafisch ontwerper dit pixel-perfect uit te laten werken.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 04. TAGLINE ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <div class="section-title">Tagline</div>
+      <p class="section-desc">De vaste onderregel die in alle uitingen terugkomt — op de website, visitekaartjes, social media en e-mailhandtekeningen.</p>
+    </div>
+    <div style="background: var(--brand-dark); border-radius: 16px; padding: 3.5rem; text-align: center; margin-bottom: 2rem;">
+      <p style="font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 1.6rem; color: var(--blush); line-height: 1.6; margin: 0;">Je lichaam kent de weg<br>van spanning naar ontspanning</p>
+    </div>
+    <div style="background: var(--blush-whisper); border-radius: 16px; padding: 3.5rem; text-align: center;">
+      <p style="font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 1.6rem; color: var(--blush-deep); line-height: 1.6; margin: 0;">Je lichaam kent de weg<br>van spanning naar ontspanning</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 05. LOGO VARIANTEN ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <div class="section-title">Logo varianten</div>
+      <p class="section-desc">Het complete logo met beeldmerk, naam en ondertitel — op drie achtergronden.</p>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-variant light">
+        <svg width="50" height="72" viewBox="0 0 110 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="55" cy="18" r="13" fill="none" stroke="#8C7B6B" stroke-width="2.8"/>
+          <path d="M55 34 C52 46, 28 58, 28 80 C28 94, 36 103, 44 105 C47 106, 49 104, 51 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M55 34 C58 46, 82 58, 82 80 C82 94, 74 103, 66 105 C63 106, 61 104, 59 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="variant-name">Tremora</div>
+        <div class="variant-sub">Praktijk voor TRE & Coaching</div>
+        <span class="logo-variant-label">Op wit</span>
+      </div>
+      <div class="logo-variant blush-bg">
+        <svg width="50" height="72" viewBox="0 0 110 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="55" cy="18" r="13" fill="none" stroke="#8C7B6B" stroke-width="2.8"/>
+          <path d="M55 34 C52 46, 28 58, 28 80 C28 94, 36 103, 44 105 C47 106, 49 104, 51 100" stroke="#BE7E68" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M55 34 C58 46, 82 58, 82 80 C82 94, 74 103, 66 105 C63 106, 61 104, 59 100" stroke="#BE7E68" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="variant-name">Tremora</div>
+        <div class="variant-sub">Praktijk voor TRE & Coaching</div>
+        <span class="logo-variant-label">Op blush</span>
+      </div>
+      <div class="logo-variant dark">
+        <svg width="50" height="72" viewBox="0 0 110 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="55" cy="18" r="13" fill="none" stroke="#B8A99A" stroke-width="2.8"/>
+          <path d="M55 34 C52 46, 28 58, 28 80 C28 94, 36 103, 44 105 C47 106, 49 104, 51 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M55 34 C58 46, 82 58, 82 80 C82 94, 74 103, 66 105 C63 106, 61 104, 59 100" stroke="#D09080" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="variant-name">Tremora</div>
+        <div class="variant-sub">Praktijk voor TRE & Coaching</div>
+        <span class="logo-variant-label">Op donker</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 05. KNOPPEN & UI ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">06</div>
+      <div class="section-title">Knoppen & Elementen</div>
+      <p class="section-desc">Ronde, zachte vormen. Blush als primaire actie, taupe als secondaire optie.</p>
+    </div>
+    <div class="button-section">
+      <div>
+        <div class="button-row-label">Primair (blush)</div>
+        <div class="button-row">
+          <button class="btn btn-primary">Maak een afspraak</button>
+          <button class="btn btn-primary" style="background: var(--blush-deep);">Hover-state</button>
+        </div>
+      </div>
+      <div>
+        <div class="button-row-label">Secondair (taupe)</div>
+        <div class="button-row">
+          <button class="btn btn-secondary">Meer over TRE</button>
+          <button class="btn btn-soft">Neem contact op</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 06. TONE OF VOICE ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">07</div>
+      <div class="section-title">Tone of Voice</div>
+      <p class="section-desc">Hoe Tremora communiceert — in alle uitingen, van website tot social media.</p>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <h4>Warm & persoonlijk</h4>
+        <p>We schrijven alsof we iemand aanspreken die tegenover ons zit. Geen afstandelijke taal, maar menselijk en betrokken. "Je" in plaats van "u".</p>
+      </div>
+      <div class="voice-card">
+        <h4>Bemoedigend</h4>
+        <p>We geven hoop en vertrouwen. Niet door spanning te bagatelliseren, maar door te laten zien dat je er zelf invloed op hebt. De nadruk ligt op wat je wél kunt.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Helder & toegankelijk</h4>
+        <p>Geen jargon, geen ingewikkelde termen. We leggen TRE uit zodat iedereen het begrijpt — ongeacht achtergrond of voorkennis.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Respectvol & niet-dwingend</h4>
+        <p>We adviseren, niet pushen. De keuze ligt altijd bij de ander. Dit past bij de kern van TRE: eigenaarschap over je eigen lichaam en welzijn.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 07. BEELDRICHTLIJNEN ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">08</div>
+      <div class="section-title">Beeldrichtlijnen</div>
+      <p class="section-desc">Richtlijnen voor fotografie en beeldgebruik.</p>
+    </div>
+    <div class="imagery-grid">
+      <div class="imagery-card do">
+        <div class="check">✓</div>
+        <h4>Wel</h4>
+        <p>Warme, natuurlijke belichting. Rustige omgevingen. Echte mensen in ontspannen poses. Zachte focus, aardse tinten.</p>
+      </div>
+      <div class="imagery-card do">
+        <div class="check">✓</div>
+        <h4>Sfeer</h4>
+        <p>Natuur, zachte texturen, warme materialen (hout, linnen, wol). Ruimte en lucht in de compositie. Blush- en crèmetinten.</p>
+      </div>
+      <div class="imagery-card dont">
+        <div class="check">✗</div>
+        <h4>Niet</h4>
+        <p>Geen klinische sfeer, geen stockfoto-glimlachen, geen felle kleuren of harde contrasten. Geen spirituele clichés.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <p>Tremora — Praktijk voor TRE & Coaching</p>
+    <p style="font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 1rem; color: var(--taupe); margin-top: 0.5rem;">Je lichaam kent de weg van spanning naar ontspanning</p>
+    <p class="small">Huisstijlgids 2.0 · Conceptversie · 2025</p>
+  </div>
+
+</body>
+</html>
