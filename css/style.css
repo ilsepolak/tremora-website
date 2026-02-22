@@ -143,6 +143,13 @@ a:hover {
   position: relative;
 }
 
+/* Dropdown-wrapper: op desktop gewoon links + CTA naast elkaar */
+.nav-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -309,7 +316,7 @@ a:hover {
 }
 
 .cta-buttons .btn {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-width: 0;
 }
 
@@ -469,7 +476,7 @@ a:hover {
 }
 
 .hero-buttons .btn {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-width: 0;
 }
 
@@ -678,20 +685,32 @@ a:hover {
 /* Extra small (phones portret) — tot 575px */
 @media (max-width: 575px) {
   .header {
-    padding: 1rem 1rem;
+    padding: 0.875rem 1rem;
   }
 
   .header-container {
-    gap: 0.5rem;
+    gap: 0.75rem;
+    min-height: 0;
+  }
+
+  .logo-link {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
   .logo-text {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
+    letter-spacing: 0.03em;
   }
 
   .logo-icon {
-    width: 40px;
-    height: 52px;
+    width: 38px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .nav {
+    flex-shrink: 0;
   }
 
   .cta-block,
@@ -790,11 +809,16 @@ a:hover {
   }
 
   .nav {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+    position: static; /* dropdown positioneert t.o.v. .header */
   }
 
-  .nav-links {
+  /* Hele dropdown (links + CTA) verborgen in header; alleen hamburger zichtbaar */
+  .nav-dropdown {
     display: none;
     position: absolute;
     top: 100%;
@@ -802,41 +826,51 @@ a:hover {
     right: 0;
     background: var(--warm-white);
     flex-direction: column;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     box-shadow: 0 4px 20px rgba(61, 46, 39, 0.1);
-    gap: 0;
     margin-top: 0.5rem;
     border-radius: 0 0 12px 12px;
+    gap: 0;
   }
 
-  .nav-links.active {
+  .nav-dropdown.active {
     display: flex;
   }
 
-  .nav-links li {
+  .nav-dropdown .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: static;
+    padding: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .nav-dropdown .nav-links li {
     border-bottom: 1px solid var(--border-light);
   }
 
-  .nav-links li:last-child {
+  .nav-dropdown .nav-links li:last-child {
     border-bottom: none;
   }
 
-  .nav-links a {
+  .nav-dropdown .nav-links a {
     display: flex;
     align-items: center;
     padding: 1rem 0;
     min-height: var(--touch-min);
   }
 
-  .nav-cta {
-    margin-left: 0;
-    margin-top: 1rem;
+  .nav-dropdown .nav-cta {
+    margin: 0;
+    margin-top: 0.75rem;
     padding-top: 1rem;
     border-top: 1px solid var(--border-light);
     width: 100%;
   }
 
-  .nav-cta .btn {
+  .nav-dropdown .nav-cta .btn {
     width: 100%;
     justify-content: center;
   }
@@ -882,9 +916,9 @@ a:hover {
   }
 }
 
-/* Large (desktop): nav-cta naast links */
+/* Large (desktop): dropdown toont links + CTA in één rij */
 @media (min-width: 769px) {
-  .nav-links {
+  .nav-dropdown {
     display: flex;
   }
 }

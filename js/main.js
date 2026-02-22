@@ -1,28 +1,31 @@
 // Hamburger menu toggle
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const navDropdown = document.getElementById('nav-dropdown');
   const header = document.querySelector('.header');
 
-  if (hamburger && navLinks) {
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.setAttribute('aria-controls', 'nav-links');
+  function closeMenu() {
+    if (navDropdown) {
+      navDropdown.classList.remove('active');
+      if (hamburger) {
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+      document.body.style.overflow = '';
+    }
+  }
 
+  if (hamburger && navDropdown) {
     hamburger.addEventListener('click', function() {
-      const isOpen = navLinks.classList.toggle('active');
+      const isOpen = navDropdown.classList.toggle('active');
       hamburger.classList.toggle('is-open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Sluit menu bij klik op een link (mobile UX)
-    navLinks.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+    // Sluit menu bij klik op een link of CTA in het dropdown (mobile UX)
+    navDropdown.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
     });
   }
 
