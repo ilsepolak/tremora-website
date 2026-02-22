@@ -286,6 +286,11 @@ a:hover {
   box-shadow: 0 2px 16px rgba(61, 46, 39, 0.08);
 }
 
+/* Portret-placeholders: iets ronder in lijn met huisstijl (rond of zacht afgerond) */
+.two-column img.placeholder-portret {
+  border-radius: 16px;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--brand-dark);
