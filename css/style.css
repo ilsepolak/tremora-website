@@ -141,19 +141,27 @@ a:hover {
   align-items: center;
   gap: 2.5rem;
   position: relative;
+  flex-wrap: nowrap;
 }
 
-/* Dropdown-wrapper: op desktop gewoon links + CTA naast elkaar */
+/* Dropdown-wrapper: op desktop gewoon links + CTA naast elkaar, altijd één rij */
 .nav-dropdown {
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex-wrap: nowrap;
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
   list-style: none;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.nav-dropdown .nav-cta {
+  flex-shrink: 0;
 }
 
 .nav-links a {
@@ -167,6 +175,23 @@ a:hover {
 
 .nav-links a:hover {
   color: var(--text-dark);
+}
+
+/* Huidige pagina in navigatie — subtiele active status */
+.nav-links a.is-active {
+  color: var(--text-dark);
+  font-weight: 500;
+  position: relative;
+}
+.nav-links a.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: var(--blush);
+  opacity: 0.7;
 }
 
 .nav-cta {

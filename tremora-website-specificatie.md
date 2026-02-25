@@ -79,7 +79,7 @@ Je lichaam kent de weg van spanning naar ontspanning
 Havelte & Ruinerwold, Drenthe
 [e-mailadres]  |  [telefoonnummer]
 
-© 2025 Tremora
+© 2026 Tremora
 ```
 
 - Achtergrond: `--brand-dark`

@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Active status: markeer huidige pagina in navigatie
+  const navLinks = document.querySelectorAll('.nav-links a[href]');
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split('/').pop() || 'index.html';
+  navLinks.forEach(function(link) {
+    const href = link.getAttribute('href') || '';
+    const linkPage = href.split('/').pop();
+    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+      link.classList.add('is-active');
+    }
+  });
+
   // Header shadow on scroll
   if (header) {
     window.addEventListener('scroll', function() {

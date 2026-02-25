@@ -60,4 +60,4 @@ open http://localhost:8000
 
 ## 📄 Licentie
 
-© 2025 Tremora
+© 2026 Tremora
