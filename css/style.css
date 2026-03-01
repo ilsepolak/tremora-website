@@ -361,6 +361,7 @@ a:hover {
 
 .two-column img {
   width: 100%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(61, 46, 39, 0.08);
 }
@@ -923,6 +924,7 @@ a:hover {
     max-height: 280px;
     object-fit: cover;
   }
+
 
   .contact-grid {
     grid-template-columns: 1fr;
