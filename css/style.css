@@ -371,7 +371,7 @@ a:hover {
   border-radius: 16px;
 }
 
-/* Over Els sectie: tekst eerst, daarna portret (zelfde grootte als bloei-SVG) */
+/* Over Els sectie: desktop = afbeelding links, tekst rechts; mobiel = tekst dan afbeelding */
 .section-els .els-content {
   display: flex;
   flex-direction: column;
@@ -402,6 +402,40 @@ a:hover {
   object-position: center bottom;
   border-radius: 12px;
   display: block;
+}
+
+@media (min-width: 769px) {
+  .section-els .els-content {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 3rem;
+    max-width: 100%;
+  }
+
+  .section-els .els-portret-wrap {
+    order: -1;
+    flex: 0 0 auto;
+    width: 320px;
+    max-width: none;
+    min-height: 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .section-els .els-portret-wrap .els-portret {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center top;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .section-els .els-text {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 /* ===== FOOTER ===== */
