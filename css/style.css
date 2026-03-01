@@ -913,11 +913,11 @@ a:hover {
   }
 
   .two-column > div:first-child {
-    order: 2;
+    order: 1;
   }
 
   .two-column > div:last-child {
-    order: 1;
+    order: 2;
   }
 
   .two-column img {
