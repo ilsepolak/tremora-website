@@ -371,6 +371,39 @@ a:hover {
   border-radius: 16px;
 }
 
+/* Over Els sectie: tekst eerst, daarna portret (zelfde grootte als bloei-SVG) */
+.section-els .els-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-els .els-text {
+  width: 100%;
+}
+
+.section-els .els-portret-wrap {
+  width: 100%;
+  max-width: 600px;
+  padding: 1.25rem;
+  background: linear-gradient(145deg, var(--blush-whisper) 0%, var(--blush-light) 50%, var(--cream) 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 20px rgba(140, 123, 107, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.section-els .els-portret-wrap .els-portret {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  object-position: center bottom;
+  border-radius: 12px;
+  display: block;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--brand-dark);
@@ -925,6 +958,17 @@ a:hover {
     object-fit: cover;
   }
 
+  .section-els .els-content {
+    gap: 2rem;
+  }
+
+  .section-els .els-portret-wrap {
+    padding: 1rem;
+  }
+
+  .section-els .els-portret-wrap .els-portret {
+    max-height: 320px;
+  }
 
   .contact-grid {
     grid-template-columns: 1fr;
