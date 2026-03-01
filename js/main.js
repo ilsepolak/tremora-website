@@ -66,6 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Uitklapbare sessiedata (aanbod pagina)
+  const sessionDatesBtn = document.getElementById('session-dates-btn');
+  const sessionDatesList = document.getElementById('session-dates-list');
+  const sessionDatesWrap = document.querySelector('.session-dates-wrap');
+  if (sessionDatesBtn && sessionDatesList && sessionDatesWrap) {
+    sessionDatesBtn.addEventListener('click', function() {
+      const isOpen = sessionDatesWrap.classList.toggle('is-open');
+      sessionDatesBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      sessionDatesList.hidden = !isOpen;
+      sessionDatesBtn.textContent = isOpen ? 'Verberg data' : 'Bekijk geplande data';
+    });
+  }
+
   // FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
