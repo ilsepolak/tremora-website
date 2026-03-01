@@ -132,7 +132,7 @@ Je lichaam kent de weg van spanning naar ontspanning
 **Tekst:**
 > Draag je spanning met je mee die je maar niet kwijtraakt? Slaap je slecht, ben je vaak moe, of merk je dat stress zich vastzet in je lijf?
 >
-> TRE (Tension & Trauma Releasing Exercises) is een eenvoudige, lichaamsgereichte methode die je helpt om diepe spanning los te laten. Door middel van zachte oefeningen activeer je het natuurlijke trilmechanisme van je lichaam — een proces dat zorgt voor ontspanning en herstel.
+> TRE (Tension & Trauma Releasing Exercises) is een eenvoudige, lichaamsgerichte methode die je helpt om diepe spanning los te laten. Door middel van zachte oefeningen activeer je het natuurlijke trilmechanisme van je lichaam — een proces dat zorgt voor ontspanning en herstel.
 >
 > Het mooie aan TRE? Als je het eenmaal geleerd hebt, kun je het de rest van je leven zelfstandig toepassen. Je krijgt een tool in handen waarmee je zelf invloed hebt op hoe je met stress en spanning omgaat.
 
@@ -219,7 +219,7 @@ Uitleggen wat TRE is op een heldere, toegankelijke manier. Wegnemen van drempels
 **Kop:** Je lichaam weet hoe het moet
 
 **Tekst:**
-> TRE staat voor Tension & Trauma Releasing Exercises en is ontwikkeld door Dr. David Berceli. Het is een eenvoudige, lichaamsgereichte methode die gebruikmaakt van het natuurlijke trilmechanisme van je lichaam.
+> TRE staat voor Tension & Trauma Releasing Exercises en is ontwikkeld door Dr. David Berceli. Het is een eenvoudige, lichaamsgerichte methode die gebruikmaakt van het natuurlijke trilmechanisme van je lichaam.
 >
 > Iedereen kent het wel: trillen van de kou, bibberen voor een presentatie, of schudden na een schrik. Dit trillen is geen zwakte — het is de manier waarop je lichaam spanning loslaat en terugkeert naar een ontspannen staat.
 >
