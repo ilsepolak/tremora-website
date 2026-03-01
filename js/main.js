@@ -1,3 +1,17 @@
+// Footer component: laad op elke pagina dezelfde footer (van de homepage)
+(function loadFooter() {
+  const container = document.getElementById('footer-container');
+  if (!container) return;
+  fetch('components/footer.html')
+    .then(function(r) { return r.ok ? r.text() : Promise.reject(new Error('Footer niet gevonden')); })
+    .then(function(html) {
+      container.innerHTML = html.trim();
+    })
+    .catch(function() {
+      container.innerHTML = '<footer class="footer"><div class="footer-container"><p>© 2026 TREmora</p></div></footer>';
+    });
+})();
+
 // Hamburger menu toggle
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
