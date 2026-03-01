@@ -12,14 +12,18 @@
   --taupe-dark: #8C7B6B;
   --taupe-deep: #6B5D55;
 
-  /* Neutrals */
+  /* Neutrals — donkerder voor betere leesbaarheid (WCAG AA) */
   --cream: #F7F3EF;
   --warm-white: #FDFBF9;
   --text-dark: #3D2E27;
-  --text-medium: #6B5D55;
-  --text-light: #9B8E86;
+  --text-medium: #4a4039;
+  --text-light: #6b5f58;
   --border-light: #E8E0D8;
   --brand-dark: #3D3029;
+
+  /* Links — voldoende contrast op lichte achtergrond */
+  --link-color: #9a5c4a;
+  --link-hover: #7d4a3b;
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -82,13 +86,13 @@ p {
 }
 
 a {
-  color: var(--blush);
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--blush-deep);
+  color: var(--link-hover);
 }
 
 /* ===== HEADER / NAVIGATIE ===== */
@@ -168,7 +172,7 @@ a:hover {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 0.9rem;
-  color: var(--text-medium);
+  color: var(--text-dark);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -190,8 +194,8 @@ a:hover {
   right: 0;
   bottom: -4px;
   height: 1px;
-  background: var(--blush);
-  opacity: 0.7;
+  background: var(--link-color);
+  opacity: 0.9;
 }
 
 .nav-cta {
@@ -260,24 +264,24 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--blush);
-  color: white;
+  background: var(--blush-deep);
+  color: var(--warm-white);
 }
 
 .btn-primary:hover {
-  background: var(--blush-deep);
-  color: white;
+  background: var(--link-hover);
+  color: var(--warm-white);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--taupe-dark);
-  border: 1.5px solid var(--taupe);
+  color: var(--text-dark);
+  border: 1.5px solid var(--taupe-dark);
 }
 
 .btn-secondary:hover {
   background: var(--cream);
-  color: var(--taupe-dark);
+  color: var(--text-dark);
 }
 
 /* ===== SECTIONS ===== */
@@ -322,6 +326,7 @@ a:hover {
 
 .cta-block h2 {
   margin-bottom: 1rem;
+  color: var(--text-dark);
 }
 
 .cta-block p {
@@ -330,6 +335,7 @@ a:hover {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  color: var(--text-medium);
 }
 
 .cta-buttons {
@@ -398,7 +404,7 @@ a:hover {
 .footer-subtitle {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--blush-soft);
+  color: var(--cream);
   margin-bottom: 1.5rem;
 }
 
@@ -407,26 +413,26 @@ a:hover {
   font-style: italic;
   font-weight: 300;
   font-size: 1.2rem;
-  color: var(--blush);
+  color: var(--cream);
   margin: 2rem 0;
 }
 
 .footer-info {
   margin: 2rem 0;
-  color: var(--blush-soft);
+  color: var(--cream);
   font-size: 0.9rem;
 }
 
 .footer-info p {
   margin: 0.5rem 0;
-  color: var(--blush-soft);
+  color: var(--cream);
 }
 
 .footer-copyright {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(184, 169, 154, 0.2);
-  color: var(--taupe);
+  border-top: 1px solid rgba(247, 243, 239, 0.3);
+  color: var(--cream);
   font-size: 0.85rem;
 }
 
@@ -479,7 +485,7 @@ a:hover {
   font-size: clamp(0.8rem, 2vw, 1.1rem);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--taupe-dark);
+  color: var(--text-dark);
   margin-bottom: 2rem;
 }
 
@@ -488,7 +494,7 @@ a:hover {
   font-style: italic;
   font-weight: 300;
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  color: var(--blush-deep);
+  color: var(--text-dark);
   margin: 2rem 0 3rem;
 }
 
@@ -519,7 +525,7 @@ a:hover {
 
 .page-header p {
   font-size: 1.1rem;
-  color: var(--taupe-dark);
+  color: var(--text-medium);
 }
 
 /* ===== FAQ ACCORDION ===== */
@@ -554,7 +560,7 @@ a:hover {
 }
 
 .faq-icon {
-  color: var(--blush);
+  color: var(--link-color);
   font-size: 1.5rem;
   transition: transform 0.3s ease;
   flex-shrink: 0;
@@ -598,7 +604,7 @@ a:hover {
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 300;
-  color: var(--blush);
+  color: var(--link-color);
   flex-shrink: 0;
   line-height: 1;
 }
@@ -628,7 +634,7 @@ a:hover {
 }
 
 .offer-subtitle {
-  color: var(--taupe-dark);
+  color: var(--text-medium);
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
@@ -649,7 +655,7 @@ a:hover {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--blush);
+  color: var(--link-color);
   font-weight: bold;
 }
 
@@ -667,7 +673,7 @@ a:hover {
 .offer-price {
   font-family: var(--font-display);
   font-size: 2rem;
-  color: var(--blush-deep);
+  color: var(--link-color);
   font-weight: 500;
   margin: 1rem 0;
 }
@@ -702,7 +708,7 @@ a:hover {
 }
 
 .contact-detail a {
-  color: var(--blush);
+  color: var(--link-color);
 }
 
 /* ===== RESPONSIVE — Marktstandaarden (mobile-first breakpoints) ===== */
