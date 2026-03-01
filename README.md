@@ -2,22 +2,41 @@
 
 Website voor Tremora - Praktijk voor TRE & Coaching in Drenthe.
 
-## 🌐 Website live zetten met GitHub Pages
+## 🌐 Website live zetten
 
-### Stap 1: Ga naar Settings
+### Huidige status
+De site staat **al live** op GitHub Pages:
+- **URL:** [https://ilsepolak.github.io/tremora-website/](https://ilsepolak.github.io/tremora-website/index.html)  
+- Bij elke push naar de branch `main` wordt de site automatisch opnieuw gedeployed.
+
+---
+
+### Stappen om de site op www.tremora.nl te zetten
+
+#### Stap 1: Custom domain in GitHub instellen
 1. Ga naar je GitHub repository: https://github.com/ilsepolak/tremora-website
-2. Klik op **Settings** (rechtsboven in het menu)
+2. Klik op **Settings** → in het linkermenu op **Pages**
+3. Bij **Custom domain** vul je in: **`www.tremora.nl`**
+4. Klik op **Save**
 
-### Stap 2: Activeer GitHub Pages
-1. Scroll naar beneden in het linkermenu en klik op **Pages**
-2. Bij **Source** kies:
-   - **Branch**: `main`
-   - **Folder**: `/ (root)`
-3. Klik op **Save**
+#### Stap 2: DNS instellen bij je domeinregistrar
+1. Log in bij de partij waar je **tremora.nl** hebt geregistreerd (bijv. TransIP, Hostnet, One.com)
+2. Ga naar de **DNS-instellingen** voor het domein tremora.nl
+3. Voeg een **CNAME-record** toe:
+   - **Naam/Host:** `www`
+   - **Waarde:** `ilsepolak.github.io`
 
-### Stap 3: Wacht even
-- GitHub heeft een paar minuten nodig om je website te bouwen
-- Je krijgt een melding met de URL: `https://ilsepolak.github.io/tremora-website/`
+#### Stap 3: Wachten en HTTPS aanzetten
+- DNS kan 5 minuten tot 48 uur duren (vaak binnen een half uur actief)
+- In GitHub bij **Pages** zie je of het domein nog gecontroleerd wordt; als het groen is, is het goed
+- Zet daarna **Enforce HTTPS** aan (zelfde pagina) — GitHub regelt dan het SSL-certificaat voor www.tremora.nl
+
+---
+
+### GitHub Pages opnieuw inschakelen (als dat ooit nodig is)
+1. **Settings** → **Pages**
+2. Bij **Source**: **Branch** `main`, **Folder** `/ (root)` → **Save**
+3. De workflow deployt automatisch bij elke push naar `main`
 
 ## 📁 Projectstructuur
 

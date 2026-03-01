@@ -507,6 +507,34 @@ a:hover {
   color: var(--cream);
 }
 
+.footer-info a {
+  color: var(--blush-soft);
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  color: var(--blush-light);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.footer-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-whatsapp-icon {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  color: var(--blush-soft);
+}
+
+.footer-whatsapp-link:hover .footer-whatsapp-icon {
+  color: var(--blush-light);
+}
+
 .footer-copyright {
   margin-top: 3rem;
   padding-top: 2rem;
@@ -707,6 +735,7 @@ a:hover {
   border-radius: 16px;
   padding: 3rem;
   box-shadow: 0 2px 16px rgba(61, 46, 39, 0.05);
+  min-width: 0; /* gelijke breedte in grid, CTA kan 100% nemen */
 }
 
 /* Variabele content groeit, zodat Duur/Locatie op dezelfde hoogte komen in alle cards */
@@ -719,20 +748,19 @@ a:hover {
   flex: 0 0 auto;
 }
 
-/* Card CTA’s: zelfde weergave als nav-knop ‘Maak een afspraak’ */
-.offer-card-cta {
+/* Card CTA’s:zelfde hoogte als nav-knop; ruimte via wrapper */
+.offer-card-cta-wrap {
   margin-top: auto;
   padding-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: var(--touch-min);
+  width: 100%;
+  min-width: 0; /* nodig in flex/grid zodat kind 100% kan nemen */
 }
 
-.offer-card-cta.btn {
-  min-width: var(--touch-min);
-  width: auto;
+.offer-card-cta-wrap .btn {
+  width: 100% !important;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .offer-card h2 {
@@ -914,6 +942,32 @@ a:hover {
   color: var(--link-color);
 }
 
+.contact-link-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-underline-offset: 0.2em;
+}
+
+.contact-link-with-icon:hover {
+  color: var(--link-hover);
+}
+
+.contact-icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.contact-icon-whatsapp {
+  color: var(--link-color);
+}
+
+.contact-link-with-icon:hover .contact-icon-whatsapp {
+  color: var(--link-hover);
+}
+
 /* ===== RESPONSIVE — Marktstandaarden (mobile-first breakpoints) ===== */
 
 /* Extra small (phones portret) — tot 575px */
@@ -981,10 +1035,9 @@ a:hover {
     padding: 1.5rem;
   }
 
-  .offer-card .btn {
+  .offer-card-cta-wrap .btn {
     width: 100%;
     display: flex;
-    margin-top: 1.5rem;
   }
 
   .faq-question {
