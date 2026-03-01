@@ -277,7 +277,7 @@ Na een paar begeleide sessies kun je TRE zelfstandig thuis beoefenen. Je hebt da
 **Kop:** Veelgestelde vragen
 
 **Vraag: Is TRE geschikt voor iedereen?**
-TRE is geschikt voor de meeste mensen, ongeacht leeftijd of fysieke conditie. De oefeningen zijn eenvoudig en kunnen worden aangepast aan jouw mogelijkheden. Bij specifieke medische of psychische klachten is het verstandig om dit vooraf te bespreken.
+TRE is geschikt voor de meeste mensen, ongeacht leeftijd of fysieke conditie. De oefeningen zijn eenvoudig en kunnen worden aangepast aan jouw mogelijkheden. Bij specifieke medische of psychische klachten is het verstandig om dit vooraf te bespreken. Je vult vooraf een medisch intakeformulier in.
 
 **Vraag: Hoe snel merk ik resultaat?**
 Veel mensen ervaren al na de eerste sessie een gevoel van ontspanning. Het effect bouwt op naarmate je het vaker doet. Na een paar begeleide sessies heb je voldoende ervaring om zelfstandig verder te gaan.
