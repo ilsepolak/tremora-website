@@ -1,3 +1,15 @@
+// Logo component: laad op elke pagina hetzelfde TREmora-logo (symbool + tekst)
+(function loadLogo() {
+  const logoLink = document.querySelector('.logo-link');
+  if (!logoLink) return;
+  fetch('components/logo.html')
+    .then(function(r) { return r.ok ? r.text() : Promise.reject(new Error('Logo niet gevonden')); })
+    .then(function(html) {
+      logoLink.innerHTML = html.trim();
+    })
+    .catch(function() { /* behoud bestaande inhoud bij fout */ });
+})();
+
 // Footer component: laad op elke pagina dezelfde footer (van de homepage)
 (function loadFooter() {
   const container = document.getElementById('footer-container');
@@ -79,20 +91,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // FAQ Accordion
+  // FAQ Accordion (klik en toetsenbord)
   const faqItems = document.querySelectorAll('.faq-item');
+  function toggleFaqItem(targetItem) {
+    const isActive = targetItem.classList.contains('active');
+    faqItems.forEach(faq => faq.classList.remove('active'));
+    if (!isActive) targetItem.classList.add('active');
+  }
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
-      question.addEventListener('click', function() {
-        const isActive = item.classList.contains('active');
-        
-        // Close all FAQ items
-        faqItems.forEach(faq => faq.classList.remove('active'));
-        
-        // Open clicked item if it wasn't active
-        if (!isActive) {
-          item.classList.add('active');
+      question.setAttribute('role', 'button');
+      question.setAttribute('tabindex', '0');
+      question.addEventListener('click', function() { toggleFaqItem(item); });
+      question.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleFaqItem(item);
         }
       });
     }
