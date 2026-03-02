@@ -397,21 +397,27 @@ a:hover {
 }
 
 .section-els .els-portret-wrap {
+  position: relative;
   width: 100%;
   max-width: 600px;
-  padding: 1.25rem;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
   background: linear-gradient(145deg, var(--blush-whisper) 0%, var(--blush-light) 50%, var(--cream) 100%);
   border-radius: 16px;
   box-shadow: 0 2px 20px rgba(140, 123, 107, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .section-els .els-portret-wrap .els-portret {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
   object-position: center bottom;
-  border-radius: 12px;
+  border-radius: 16px;
   display: block;
 }
 
@@ -428,19 +434,11 @@ a:hover {
     flex: 0 0 auto;
     width: 320px;
     max-width: none;
-    min-height: 0;
-    display: flex;
-    align-items: stretch;
+    aspect-ratio: 3 / 2;
   }
 
   .section-els .els-portret-wrap .els-portret {
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    object-fit: cover;
     object-position: center top;
-    flex: 1;
-    min-height: 0;
   }
 
   .section-els .els-text {
@@ -1185,11 +1183,7 @@ a:hover {
   }
 
   .section-els .els-portret-wrap {
-    padding: 1rem;
-  }
-
-  .section-els .els-portret-wrap .els-portret {
-    max-height: 320px;
+    padding: 0;
   }
 
   .contact-grid {
