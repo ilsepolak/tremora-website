@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const isOpen = sessionDatesWrap.classList.toggle('is-open');
       sessionDatesBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       sessionDatesList.hidden = !isOpen;
-      sessionDatesBtn.textContent = isOpen ? 'Verberg data' : 'Bekijk geplande data';
+      sessionDatesBtn.textContent = isOpen ? 'Verberg informatie' : 'Meer informatie';
     });
   }
 

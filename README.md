@@ -9,6 +9,13 @@ De site staat **al live** op GitHub Pages:
 - **URL:** [https://ilsepolak.github.io/tremora-website/](https://ilsepolak.github.io/tremora-website/index.html)  
 - Bij elke push naar de branch `main` wordt de site automatisch opnieuw gedeployed.
 
+### HTTPS (veilig openen)
+- **GitHub Pages (*.github.io):** wordt standaard via **HTTPS** geserveerd — gebruik altijd `https://ilsepolak.github.io/tremora-website/`.
+- **Eigen domein (bijv. tremora.nl):** ga in GitHub naar **Settings → Pages**. Zet **Enforce HTTPS** aan (vinkje). Dan:
+  - Bezoekers die `http://` typen worden automatisch doorgestuurd naar `https://`
+  - GitHub regelt het SSL-certificaat; de site opent dan altijd met een groen slotje  
+  *Let op:* de optie "Enforce HTTPS" verschijnt pas nadat je custom domain is geverifieerd (groen vinkje bij Custom domain).
+
 ---
 
 ### Stappen om de site op www.tremora.nl te zetten
@@ -46,6 +53,7 @@ tremora-website/
 ├── wat-is-tre.html    # Wat is TRE pagina
 ├── over-els.html      # Over Els pagina
 ├── aanbod.html        # Aanbod pagina
+├── ervaringen.html    # Ervaringen / reviews
 ├── contact.html       # Contact pagina
 ├── css/
 │   └── style.css      # Alle stijlen
